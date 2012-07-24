@@ -1,0 +1,5 @@
+#!/bin/bash
+
+google=/usr/local/bin/google
+$google docs edit "Work $(date +%Y) $(date +%V)" --editor=vim --folder=weekly
+

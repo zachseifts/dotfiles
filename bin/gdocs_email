@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#
+# Emails weekly updates to an email
+#
+# usage: ./gdocs_email email@example.com
+#
+
+google=/usr/local/bin/google
+mail=/usr/bin/mail
+updates_dump=/tmp/weekly-$(date +%Y)-$(date +%V).txt
+email_subject="Weekly Update: $(date +"%A %B %d, %Y")"
+
+if [ $# -ne 1 ]
+	then
+	echo "Usage: gdocs_email <email>"
+	exit;
+fi
+
+$google docs get "Work $(date +%Y) $(date +%V)" $updates_dump
+$mail -s "$email_subject" $1 < $updates_dump
+

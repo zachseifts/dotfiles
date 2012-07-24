@@ -1,0 +1,60 @@
+# some defaults / modifications for the emacs mode
+$if mode=emacs
+
+# allow the use of the Home/End keys
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\e[1;2H": beginning-of-line
+"\e[1;2F": end-of-line
+
+# allow the use of the Delete/Insert keys
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# mappings for "page up" and "page down" to step to the beginning/end
+# of the history
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+# # mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\eOC": forward-word
+"\eOD": backward-word
+
+$if term=rxvt
+"\e[8~": end-of-line
+$endif
+
+# for non RH/Debian xterm, can't hurt for RH/DEbian xterm
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+# for freebsd console
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+# Make C-w work more like M-Rubout
+set bind-tty-special-chars Off
+"\C-w": unix-filename-rubout
+"\M-Rubout": unix-filename-rubout
+
+# Automatically show completions
+set show-all-if-ambiguous On
+# Case insensitive completion
+set completion-ignore-case On
+
+# Approximate fish-style up/down search
+"\C-n": history-search-forward
+"\e[B": history-search-forward
+"\C-p": history-search-backward
+"\e[A": history-search-backward
+
+$endif
+
+# Non emacs changes
+"\e[3": delete-char

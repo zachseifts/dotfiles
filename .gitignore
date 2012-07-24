@@ -1,0 +1,12 @@
+.DS_Store
+*~
+*.swp
+*.pyc
+tmp/**/*
+.cache/
+settings.conf
+*.log
+.hg/
+.hgignore
+.zsh/.zsh_history*
+

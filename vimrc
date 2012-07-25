@@ -17,9 +17,6 @@ set wildmode=list " More useful command completion
 set nowrap " I'm sick of having to do this all the time
 set nospell " No spell correction
 set foldmethod=marker " Sets foldmethod to marker
-set expandtab " Yes to expand tab
-set tabstop=2 " Set the default tabs to 2 spaces
-set shiftwidth=2 " Set shift width to 2
 set autoindent " Turn on auto indent
 set smartindent " Turn on smart indent
 set number " Line numbering and coloring below
@@ -27,15 +24,16 @@ highlight LineNr term=bold cterm=NONE ctermfg=Green ctermbg=NONE gui=NONE guifg=
 
 syntax enable " Automatic syntax highlighting
 
+" Setup some default highlighting and tab spacing for some filetypes
+autocmd FileType python set ts=8 sts=4 sw=4 expandtab
+autocmd FileType html set ts=8 sts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.install,*.profile set ft=php ts=8 sts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.md,*.markdown set ft=markdown ts=8 sts=4 sw=4 expandtab
+
 " A nicer-looking tabline (vim7 only)
 if exists(":tabnew") == 2
     highlight TabLine term=underline cterm=bold,underline ctermfg=Grey gui=underline
     highlight TabLineFill term=underline cterm=bold,underline gui=underline guibg=DarkGrey
     highlight TabLineSel term=reverse cterm=reverse gui=reverse
 endif
-
-" Setup syntax highlighting for things
-autocmd BufNewFile,BufRead *.install  set ft=php
-autocmd BufNewFile,BufRead *.profile  set ft=php
-autocmd BufNewFile,BufRead *.md  set ft=markdown
 

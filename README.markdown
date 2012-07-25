@@ -65,8 +65,13 @@ Then:
     creating symlink to /Users/zach/.zshrc
     Okay, done.
 
-## Update
+## Optional
 
+Set git-diff to always display with color (like git diff --color):
+
+    $ git config --global color.diff always
+
+## Update
 
 Of if you area already using these dotfiles:
 

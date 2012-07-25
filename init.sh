@@ -29,14 +29,6 @@ cd $HOME
 
 echo "Creating symlinks"
 
-# Symlink the inputrc
-if [ -L $HOME/.inputrc ]; then
-  echo 'inputrc symlink exists, removing'
-  rm $HOME/.inputrc
-fi
-ln -s .dotfiles/inputrc $HOME/.inputrc
-echo "creating symlink to $HOME/.inputrc"
-
 # Symlink the tmux.conf
 if [ -L $HOME/.tmux.conf ]; then
   echo 'tmux.conf symlink exists, removing'

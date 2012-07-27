@@ -7,3 +7,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/vim-drupalsnippets"]
+	path = vim/bundle/vim-drupalsnippets
+	url = https://github.com/theunraveler/Drupal-Snippets-for-Vim.git

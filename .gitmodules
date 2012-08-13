@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-drupalsnippets"]
 	path = vim/bundle/vim-drupalsnippets
 	url = https://github.com/theunraveler/Drupal-Snippets-for-Vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

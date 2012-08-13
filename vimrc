@@ -27,7 +27,7 @@ syntax enable " Automatic syntax highlighting
 " Setup some default highlighting and tab spacing for some filetypes
 autocmd FileType python set ts=8 sts=4 sw=4 expandtab
 autocmd FileType html set ts=8 sts=2 sw=2 expandtab
-autocmd BufNewFile,BufRead *.install,*.profile set ft=php ts=8 sts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.php,*.install,*.profile,*.module set ft=php ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.md,*.markdown set ft=markdown ts=8 sts=4 sw=4 expandtab
 
 " A nicer-looking tabline (vim7 only)

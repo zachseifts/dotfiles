@@ -49,11 +49,7 @@ bindkey '^R' history-incremental-search-backward
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/Users/zach/Applications/android-sdk-mac_x86/tools:$PATH
-export PATH=/Applications/MAMP/bin:$PATH
 export PATH=/Users/zach/Applications/utilities/bin:$PATH
-export PATH=/Applications/MAMP/Library/bin:$PATH
-export PATH=/Applications/MAMP/bin/php5.2/bin:$PATH
 
 export NODE_PATH=/usr/local/lib/node
 

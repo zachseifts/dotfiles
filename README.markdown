@@ -7,6 +7,7 @@ oh yeah!
  - git
  - zsh
  - reattach-to-user-namespace from homebrew
+ - ctags from homebrew
 
 ## Install
 

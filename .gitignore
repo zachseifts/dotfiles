@@ -9,4 +9,5 @@ settings.conf
 .hg/
 .hgignore
 .zsh/.zsh_history*
+vim/.netrwhist
 

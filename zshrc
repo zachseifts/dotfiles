@@ -67,4 +67,7 @@ autoload -U down-line-or-beginning-search up-line-or-beginning-search
 zle -N down-line-or-history down-line-or-beginning-search
 zle -N up-line-or-history up-line-or-beginning-search
 
+# Set man's pager to vim
+export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -"
+
 echo "omg hai there."

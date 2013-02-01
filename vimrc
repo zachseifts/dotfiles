@@ -28,6 +28,7 @@ syntax enable " Automatic syntax highlighting
 autocmd FileType python set ts=8 sts=4 sw=4 expandtab
 autocmd FileType html set ts=8 sts=2 sw=2 expandtab
 autocmd FileType javascript set ts=8 sts=2 sw=2 expandtab
+autocmd BufNewFile,BufRead *.sass,*.scss set ft=css ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.php,*.install,*.profile,*.module,*.inc set ft=php ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.md,*.markdown set ft=markdown ts=8 sts=4 sw=4 expandtab
 

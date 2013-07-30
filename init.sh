@@ -13,7 +13,6 @@ else
 fi
 
 cd $HOME/.dotfiles
-git pull
 git submodule update --init --recursive
 
 if [ -d $OH_MY_ZSH_DIR ]; then

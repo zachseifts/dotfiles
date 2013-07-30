@@ -5,7 +5,7 @@ OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
 if [ ! -d $HOME/.dotfiles ]; then
   echo "Dotfiles do not exist."
   cd $HOME
-  git clone git@github.com:zachseifts/dotfiles.git $HOME/.dotfiles
+  git clone https://github.com/zachseifts/dotfiles.git .dotfiles
 else
   echo "Dotfiles exist, pulling in changes"
   cd $HOME/.dotfiles
@@ -21,11 +21,11 @@ if [ -d $OH_MY_ZSH_DIR ]; then
   cd $HOME
 else
   echo "Checking out oh-my-zsh"
-  git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+  cd $HOME
+  git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
 fi
 
 cd $HOME
-
 echo "Creating symlinks"
 
 # Symlink the tmux.conf

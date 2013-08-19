@@ -16,7 +16,7 @@ export ZSH_THEME="lukerandall"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew pip mysql)
+plugins=(git osx brew pip mysql vagrant tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,7 +50,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/Users/zach/Applications/utilities/bin:$PATH
-
+export PATH=$HOME/.rvm/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
 
 set -o vi

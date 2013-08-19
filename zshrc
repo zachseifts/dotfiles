@@ -51,6 +51,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/Users/zach/Applications/utilities/bin:$PATH
 export PATH=$HOME/.rvm/bin:$PATH
+
 export NODE_PATH=/usr/local/lib/node
 
 set -o vi
@@ -71,3 +72,5 @@ zle -N up-line-or-history up-line-or-beginning-search
 export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -"
 
 echo "omg hai there."
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

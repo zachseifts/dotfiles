@@ -56,20 +56,17 @@ export NODE_PATH=/usr/local/lib/node
 
 set -o vi
 
-alias grep='egrep --color=always --exclude=\*.svn\* -r -n'
-alias lah='ls -alh'
-alias sls='screen -ls'
 if [[ `uname -s` != "Darwin" ]]; then
    alias dsrm='find . -name ".DS_Store" -exec rm \{} \;'
    alias canhaz='sudo apt-get install'
+elif [[ `uname -s` == "Darwin" ]]; then
+   export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -"
+   alias grep='egrep --color=always --exclude=\*.svn\* -r -n'
 fi
 
 autoload -U down-line-or-beginning-search up-line-or-beginning-search
 zle -N down-line-or-history down-line-or-beginning-search
 zle -N up-line-or-history up-line-or-beginning-search
-
-# Set man's pager to vim
-export MANPAGER="col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -"
 
 echo "omg hai there."
 

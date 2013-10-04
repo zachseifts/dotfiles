@@ -47,12 +47,17 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 export PATH=$HOME/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/Users/zach/Applications/utilities/bin:$PATH
-export PATH=$HOME/.rvm/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
 export NODE_PATH=/usr/local/lib/node
+
+if [[ `uname -s` == "Darwin" ]]; then
+    export PATH=/Users/zach/Applications/utilities/bin:$PATH
+    export PATH=$HOME/.rvm/bin:$PATH
+    export PATH=/usr/local/share/python:$PATH
+    export PATH=/usr/local/sbin:$PATH
+    export PATH=/usr/local/bin:$PATH
+fi
+
+export EDITOR=vim
 
 set -o vi
 

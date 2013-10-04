@@ -31,6 +31,7 @@ autocmd FileType javascript set ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.sass,*.scss set ft=css ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.php,*.install,*.profile,*.module,*.inc set ft=php ts=8 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.md,*.markdown set ft=markdown ts=8 sts=4 sw=4 expandtab
+autocmd BufNewFile,BufRead *.pp set ft=ruby ts=8 sts=4 sw=4 expandtab
 
 " A nicer-looking tabline (vim7 only)
 if exists(":tabnew") == 2

@@ -48,6 +48,7 @@ bindkey '^R' history-incremental-search-backward
 
 export PATH=$HOME/bin:$PATH
 export NODE_PATH=/usr/local/lib/node
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 if [[ $(uname -s) == "Darwin" ]]; then
     export PATH=/Users/zach/Applications/utilities/bin:$PATH
@@ -55,13 +56,15 @@ if [[ $(uname -s) == "Darwin" ]]; then
     export PATH=/usr/local/share/python:$PATH
     export PATH=/usr/local/sbin:$PATH
     export PATH=/usr/local/bin:$PATH
+    alias grep='/usr/bin/grep --color=always'
+else
+    alias grep='/bin/grep --color=always'
 fi
 
 export EDITOR=vim
 
 set -o vi
 
-alias grep='/bin/grep --color=always'
 
 autoload -U down-line-or-beginning-search up-line-or-beginning-search
 zle -N down-line-or-history down-line-or-beginning-search

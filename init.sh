@@ -18,39 +18,11 @@ if [ ! -d $OH_MY_ZSH_DIR ]; then
 fi
 cd $HOME
 
-echo "Creating symlinks"
-
-# Symlink the tmux.conf
-if [ -L $HOME/.tmux.conf ]; then
-  echo 'tmux.conf symlink exists, removing'
-  rm $HOME/.tmux.conf
-fi
-ln -s .dotfiles/tmux.conf $HOME/.tmux.conf
-echo "creating symlink to $HOME/.tmux.conf"
-
-# Symlink the .vim folder
-if [ -L $HOME/.vim ]; then
-  echo 'vim symlink exists, removing'
-  rm $HOME/.vim
-fi
-ln -s .dotfiles/vim $HOME/.vim
-echo "creating symlink to $HOME/.vim"
-
-# Symlink the .vimrc folder
-if [ -L $HOME/.vimrc ]; then
-  echo 'vim symlink exists, removing'
-  rm $HOME/.vimrc
-fi
-ln -s .dotfiles/vimrc $HOME/.vimrc
-echo "creating symlink to $HOME/.vimrc"
-
-# Symlink the .zshrc folder
-if [ -L $HOME/.zshrc ]; then
-  echo 'zshrc symlink exists, removing'
-  rm $HOME/.zshrc
-fi
-ln -s .dotfiles/zshrc $HOME/.zshrc
-echo "creating symlink to $HOME/.zshrc"
-
-echo "Okay, done."
-
+# Create the symlinks to config files
+$links=( tmux.conf vim vimrc zshrc )
+for $link in "${links[@]}"
+do
+  if [ ! -L $HOME/.$link ]; then
+    ln -s .dotfiles/$link $HOME/.$link
+  fi
+done

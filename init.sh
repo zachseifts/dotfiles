@@ -5,6 +5,7 @@
 # oh_my_zsh directory
 DOTFILES_DIR=$HOME/.dotfiles
 OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
+SSH_DIR=$HOME/.ssh
 
 # Update the dotfiles repo and submodules
 cd $DOTFILES_DIR
@@ -26,3 +27,8 @@ do
     ln -s $DOTFILES_DIR/$link $HOME/.$link
   fi
 done
+
+# Start to setup ssh config.
+if [ ! -d $SSH_DIR/sockets ]; then
+  mkdir -p $SSH_DIR/sockets
+fi

@@ -13,7 +13,7 @@ brew install vim git ffmpeg tmux reattach-to-user-namespace ctags
 brew install caskroom/cask/brew-cask
 
 # Install homebrew-cask packages
-cask_packages=( vagrant adium vlc spotify google-chrome google-hangouts firefox )
+cask_packages=( vagrant virtualbox adium vlc spotify google-chrome google-hangouts firefox )
 for app in "${cask_packages[@]}"
 do
   brew cask install --appdir=/Applications $app

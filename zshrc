@@ -51,14 +51,14 @@ export NODE_PATH=/usr/local/lib/node
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 if [[ $(uname -s) == "Darwin" ]]; then
+    export PATH=/usr/local/bin:$PATH
     export PATH=/Users/zach/Applications/utilities/bin:$PATH
     export PATH=$HOME/.rvm/bin:$PATH
     export PATH=/usr/local/share/python:$PATH
     export PATH=/usr/local/sbin:$PATH
-    export PATH=/usr/local/bin:$PATH
-    alias grep='/usr/bin/grep --color=always'
+    alias grep='/usr/bin/grep --color=always -r -n'
 else
-    alias grep='/bin/grep --color=always'
+    alias grep='/bin/grep --color=always -r -n'
 fi
 
 export EDITOR=vim

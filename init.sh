@@ -1,31 +1,23 @@
 #!/bin/bash
 
-OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
+# This script sets up the terminal environment.
 
-if [ ! -d $HOME/.dotfiles ]; then
-  echo "Dotfiles do not exist."
-  cd $HOME
-  git clone https://github.com/zachseifts/dotfiles.git .dotfiles
-else
-  echo "Dotfiles exist, pulling in changes"
-  cd $HOME/.dotfiles
-  git pull
+# oh_my_zsh directory
+DOTFILES_DIR=$HOME/.dotfiles
+OH_MY_ZSH_DIR=$HOME/.ohmy-zsh
+
+# Update the dotfiles repo and submodules
+cd $DOTFILES_DIR
+git pull
+git submodule init
+git submodule update
+
+# Install oh-my-zsh if it's not already enabled
+if [ ! -d $OH_MY_ZSH_DIR ]; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git $OH_MY_ZSH_DIR
 fi
-
-cd $HOME/.dotfiles
-git submodule update --init --recursive
-
-if [ -d $OH_MY_ZSH_DIR ]; then
-  cd $OH_MY_ZSH_DIR
-  git pull
-  cd $HOME
-else
-  echo "Checking out oh-my-zsh"
-  cd $HOME
-  git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
-fi
-
 cd $HOME
+
 echo "Creating symlinks"
 
 # Symlink the tmux.conf

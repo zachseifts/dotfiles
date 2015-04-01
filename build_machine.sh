@@ -15,6 +15,6 @@ brew install caskroom/cask/brew-cask
 # Install homebrew-cask packages
 cask_packages=( vagrant adium vlc spotify google-chrome google-hangouts firefox )
 for app in "${cask_packages[@]}"
-do:
+do
   brew cask install --appdir=/Applications $app
 done

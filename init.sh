@@ -31,4 +31,5 @@ done
 # Start to setup ssh config.
 if [ ! -d $SSH_DIR/sockets ]; then
   mkdir -p $SSH_DIR/sockets
+  chmod uo-a $SSH_DIR/sockets
 fi

@@ -4,7 +4,7 @@
 
 # oh_my_zsh directory
 DOTFILES_DIR=$HOME/.dotfiles
-OH_MY_ZSH_DIR=$HOME/.ohmy-zsh
+OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
 
 # Update the dotfiles repo and submodules
 cd $DOTFILES_DIR

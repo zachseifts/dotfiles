@@ -6,6 +6,9 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 
+# Install homebrew packages
+brew install vim git ffmpeg tmux reattach-to-user-namespace ctags
+
 # Install homebrew-cask
 brew install caskroom/cask/brew-cask
 

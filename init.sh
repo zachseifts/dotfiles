@@ -20,9 +20,9 @@ cd $HOME
 
 # Create the symlinks to config files
 links=( tmux.conf vim vimrc zshrc )
-for $link in "${links[@]}"
+for link in "${links[@]}"
 do
   if [ ! -L $HOME/.$link ]; then
-    ln -s .dotfiles/$link $HOME/.$link
+    ln -s $DOTFILES_DIR/$link $HOME/.$link
   fi
 done

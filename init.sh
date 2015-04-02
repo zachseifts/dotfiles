@@ -44,6 +44,7 @@ do
   
   if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
     ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
+    chmod 600 $SSH_DIR/$key
   fi
 done
 

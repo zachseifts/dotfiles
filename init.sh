@@ -42,3 +42,8 @@ do
     ln -s $DOTFILES_DIR/keys/$key $SSH_DIR/$key
   fi
 done
+
+# Symlink the ssh config file.
+if [ ! -L $SSH_DIR/config ]; then
+  ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
+fi

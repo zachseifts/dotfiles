@@ -1,0 +1,11 @@
+Host *.appstate.edu
+  User seiftsze
+  IdentityFile ~/.ssh/ip-152010136208.lts.appstate.edu
+
+Host *
+  ForwardX11 no
+  ControlPath ~/.ssh/sockets/%r@%h:%p
+  ControlMaster auto
+  Compression yes
+  CompressionLevel 9
+  KeepAlive no

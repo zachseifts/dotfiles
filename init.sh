@@ -35,5 +35,5 @@ if [ ! -d $SSH_DIR/sockets ]; then
 fi
 
 if [ ! -L $SSH_DIR ]; then
-  ln -s $DOTFILES_DIR/keys/default.pub $SSH_DIR/id_rsa.pub
+  ln -s $DOTFILES_DIR/keys/ip-152010136208.lts.appstate.edu $SSH_DIR/ip-152010136208.lts.appstate.edu
 fi

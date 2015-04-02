@@ -33,3 +33,12 @@ if [ ! -d $SSH_DIR/sockets ]; then
   mkdir -p $SSH_DIR/sockets
   chmod 700 $SSH_DIR/sockets
 fi
+
+# Symlink the ssh keys
+keys=( ip-152010136208.lts.appstate.edu.pub )
+for key in "${keys[@]}"
+do
+  if [ ! -L $SSH_DIR/$key ]; then
+    ln -s $DOTFILES_DIR/keys/$key $SSH_DIR/$key
+  fi
+done

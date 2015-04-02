@@ -33,3 +33,7 @@ if [ ! -d $SSH_DIR/sockets ]; then
   mkdir -p $SSH_DIR/sockets
   chmod 700 $SSH_DIR/sockets
 fi
+
+if [ ! -L $SSH_DIR ]; then
+  ln -s $DOTFILES_DIR/keys/default.pub $SSH_DIR/id_rsa.pub
+fi

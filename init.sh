@@ -35,11 +35,15 @@ if [ ! -d $SSH_DIR/sockets ]; then
 fi
 
 # Symlink the ssh keys
-keys=( ip-152010136208.lts.appstate.edu.pub )
+keys=( ip-152010136208.lts.appstate.edu )
 for key in "${keys[@]}"
 do
-  if [ ! -L $SSH_DIR/$key ]; then
-    ln -s $DOTFILES_DIR/keys/$key $SSH_DIR/$key
+  if [ ! -L $SSH_DIR/$key.pub ]; then
+    ln -s $DOTFILES_DIR/keys/$key.pub $SSH_DIR/$key.pub
+  fi
+  
+  if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
+    ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
   fi
 done
 

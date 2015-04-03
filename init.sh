@@ -61,7 +61,7 @@ if [ $(uname) == "Darwin" ]; then
   brew doctor
 
   # Install homebrew packages and homebrew cask
-  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask
+  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask drush
 
   # Install homebrew-cask packages
   cask_packages=( adium alfred dropbox firefox google-chrome google-drive google-hangouts iterm2 spotify vagrant virtualbox vlc )

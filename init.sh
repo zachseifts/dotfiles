@@ -43,12 +43,30 @@ do
   fi
   
   if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
-    ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
-    chmod 600 $SSH_DIR/$key
+    if [ ! -L $SSH_DIR/$key ]; then
+      ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
+      chmod 600 $SSH_DIR/$key
+    fi
   fi
 done
 
 # Symlink the ssh config file.
 if [ ! -L $SSH_DIR/config ]; then
   ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
+fi
+
+if [ $(uname) == "Darwin" ]; then
+  # Install homebrew
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \ </dev/null
+  brew doctor
+
+  # Install homebrew packages and homebrew cask
+  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask
+
+  # Install homebrew-cask packages
+  cask_packages=( adium alfred dropbox firefox google-chrome google-drive google-hangouts iterm2 spotify vagrant virtualbox vlc )
+  for app in "${cask_packages[@]}"
+  do
+    brew cask install --appdir=/Applications $app
+  done
 fi

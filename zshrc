@@ -54,7 +54,6 @@ if [[ $(uname -s) == "Darwin" ]]; then
     export PATH=/usr/local/bin:$PATH
     export PATH=/Users/zach/Applications/utilities/bin:$PATH
     export PATH=$HOME/.rvm/bin:$PATH
-    export PATH=/usr/local/share/python:$PATH
     export PATH=/usr/local/sbin:$PATH
     alias grep='/usr/bin/grep --color=always -r -n'
 else

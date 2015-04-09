@@ -60,8 +60,13 @@ if [ $(uname) == "Darwin" ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \ </dev/null
   brew doctor
 
+  # Tap the PHP forumlae repo and its dependencies
+  brew tap homebrew/dupes
+  brew tap homebrew/versions
+  brew tap homebrew/php
+
   # Install homebrew packages and homebrew cask
-  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask drush5
+  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask drush
 
   # Install homebrew-cask packages
   cask_packages=( adium alfred dropbox firefox google-chrome google-drive google-hangouts iterm2 spotify vagrant virtualbox vlc )

@@ -2,7 +2,7 @@
 
 # This script sets up the terminal environment.
 
-# oh_my_zsh directory
+# define directory variables 
 DOTFILES_DIR=$HOME/.dotfiles
 OH_MY_ZSH_DIR=$HOME/.oh-my-zsh
 SSH_DIR=$HOME/.ssh

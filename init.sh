@@ -34,21 +34,28 @@ if [ ! -d $SSH_DIR/sockets ]; then
   chmod 700 $SSH_DIR/sockets
 fi
 
-# Symlink the ssh keys
-keys=( ip-152010136208.lts.appstate.edu )
-for key in "${keys[@]}"
-do
-  if [ ! -L $SSH_DIR/$key.pub ]; then
-    ln -s $DOTFILES_DIR/keys/$key.pub $SSH_DIR/$key.pub
-  fi
-  
-  if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
-    if [ ! -L $SSH_DIR/$key ]; then
-      ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
-      chmod 600 $SSH_DIR/$key
-    fi
-  fi
-done
+read -p "Install ssh keys? (y/n)" answer
+case ${answer:0:1} in
+  y|Y)
+    # Symlink the ssh keys
+    keys=( ip-152010136208.lts.appstate.edu )
+    for key in "${keys[@]}"
+    do
+      if [ ! -L $SSH_DIR/$key.pub ]; then
+        ln -s $DOTFILES_DIR/keys/$key.pub $SSH_DIR/$key.pub
+      fi
+      
+      if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
+        if [ ! -L $SSH_DIR/$key ]; then
+          ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
+          chmod 600 $SSH_DIR/$key
+        fi
+      fi
+    done
+  ;;
+  * )
+    echo "No keys installed"
+esac
 
 # Symlink the ssh config file.
 if [ ! -L $SSH_DIR/config ]; then

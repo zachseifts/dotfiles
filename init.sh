@@ -57,10 +57,20 @@ case ${answer:0:1} in
     echo "No keys installed"
 esac
 
-# Symlink the ssh config file.
-if [ ! -L $SSH_DIR/config ]; then
-  ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
-fi
+read -p "Install default ssh config file? (y/n)" answer
+case ${answer:0:1} in
+  y|Y)
+    # Symlink the ssh config file.
+    if [ ! -L $SSH_DIR/config ]; then
+      ln -s $DOTFILES_DIR/ssh/config_default $SSH_DIR/config
+    fi
+  ;;
+  * )
+    # Symlink the ssh config file.
+    if [ ! -L $SSH_DIR/config ]; then
+      ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
+    fi
+esac
 
 if [ $(uname) == "Darwin" ]; then
   # Install homebrew

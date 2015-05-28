@@ -1,0 +1,7 @@
+Host *
+  ForwardX11 no
+  ControlPath ~/.ssh/sockets/%r@%h:%p
+  ControlMaster auto
+  Compression yes
+  CompressionLevel 9
+  KeepAlive no

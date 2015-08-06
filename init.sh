@@ -66,10 +66,7 @@ case ${answer:0:1} in
     fi
   ;;
   * )
-    # Symlink the ssh config file.
-    if [ ! -L $SSH_DIR/config ]; then
-      ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
-    fi
+    echo "The default ssh config was not installed."
 esac
 
 if [ $(uname) == "Darwin" ]; then

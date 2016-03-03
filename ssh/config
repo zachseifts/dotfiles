@@ -9,3 +9,4 @@ Host *
   Compression yes
   CompressionLevel 9
   KeepAlive no
+  UseRoaming no

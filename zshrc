@@ -21,6 +21,7 @@ plugins=(git osx brew pip mysql vagrant tmux ssh-agent)
 source $ZSH/oh-my-zsh.sh
 
 setopt NO_clobber \
+       NO_glob_assign \
        extended_glob \
        extended_history \
        glob_complete \

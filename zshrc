@@ -56,9 +56,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
     export PATH=/Users/zach/Applications/utilities/bin:$PATH
     export PATH=$HOME/.rvm/bin:$PATH
     export PATH=/usr/local/sbin:$PATH
-    alias grep='/usr/bin/grep --color=always -R -n'
+    alias grep='/usr/bin/grep --color=always -R'
 else
-    alias grep='/bin/grep --color=always -r -n'
+    alias grep='/bin/grep --color=always -r'
 fi
 
 export EDITOR=vim

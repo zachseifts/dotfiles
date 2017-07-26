@@ -1,4 +1,4 @@
-# My dotfiles-o-doom!
+# My dotfiles!
 
 oh yeah!
 

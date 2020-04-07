@@ -16,7 +16,7 @@ export ZSH_THEME="lukerandall"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew pip mysql vagrant tmux ssh-agent)
+plugins=(git osx brew pip vagrant tmux ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,9 +56,9 @@ if [[ $(uname -s) == "Darwin" ]]; then
     export PATH=/Users/zach/Applications/utilities/bin:$PATH
     export PATH=$HOME/.rvm/bin:$PATH
     export PATH=/usr/local/sbin:$PATH
-    alias grep='/usr/bin/grep --color=always -R'
+    alias grep='/usr/bin/grep --color=always -R -n'
 else
-    alias grep='/bin/grep --color=always -r'
+    alias grep='/bin/grep --color=always -r -n'
 fi
 
 export EDITOR=vim

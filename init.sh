@@ -34,28 +34,14 @@ if [ ! -d $SSH_DIR/sockets ]; then
   chmod 700 $SSH_DIR/sockets
 fi
 
-read -p "Install ssh keys? (y/n)" answer
-case ${answer:0:1} in
-  y|Y)
-    # Symlink the ssh keys
-    keys=( ip-152010136208.lts.appstate.edu )
-    for key in "${keys[@]}"
-    do
-      if [ ! -L $SSH_DIR/$key.pub ]; then
-        ln -s $DOTFILES_DIR/keys/$key.pub $SSH_DIR/$key.pub
-      fi
-      
-      if [ -f $HOME/Dropbox/keys/$key/id_rsa ]; then
-        if [ ! -L $SSH_DIR/$key ]; then
-          ln -s $HOME/Dropbox/keys/$key/id_rsa $SSH_DIR/$key
-          chmod 600 $SSH_DIR/$key
-        fi
-      fi
-    done
-  ;;
-  * )
-    echo "No keys installed"
-esac
+# Symlink the ssh public keys
+keys=( work_id_rsa laptop_id_rsa )
+for key in "${keys[@]}"
+do
+  if [ ! -L $SSH_DIR/$key.pub ]; then
+    ln -s $DOTFILES_DIR/keys/$key.pub $SSH_DIR/$key.pub
+  fi
+done
 
 read -p "Install default ssh config file? (y/n)" answer
 case ${answer:0:1} in
@@ -68,24 +54,3 @@ case ${answer:0:1} in
   * )
     echo "The default ssh config was not installed."
 esac
-
-if [ $(uname) == "Darwin" ]; then
-  # Install homebrew
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \ </dev/null
-  brew doctor
-
-  # Tap the PHP forumlae repo and its dependencies
-  brew tap homebrew/dupes
-  brew tap homebrew/versions
-  brew tap homebrew/php
-
-  # Install homebrew packages and homebrew cask
-  brew install vim git ffmpeg tmux reattach-to-user-namespace ctags caskroom/cask/brew-cask drush
-
-  # Install homebrew-cask packages
-  cask_packages=( adium alfred dropbox firefox google-chrome google-drive google-hangouts iterm2 slack spotify vagrant virtualbox vlc python )
-  for app in "${cask_packages[@]}"
-  do
-    brew cask install --appdir=/Applications $app
-  done
-fi

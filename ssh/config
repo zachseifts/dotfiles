@@ -1,12 +1,19 @@
+Host *.home.seifts.us
+    User zach
+    IdentityFile ~/.ssh/laptop_id_rsa
+
+Host *.grooved.us
+    User zach
+    IdentityFile ~/.ssh/laptop_id_rsa
+
 Host *.appstate.edu
-  User seiftsze
-  IdentityFile ~/.ssh/ip-152010136208.lts.appstate.edu
+    User seiftsze
 
 Host *
-  ForwardX11 no
-  ControlPath ~/.ssh/sockets/%r@%h:%p
-  ControlMaster auto
-  Compression yes
-  CompressionLevel 9
-  KeepAlive no
-  UseRoaming no
+    ForwardX11 no
+    ControlPath ~/.ssh/sockets/%r@%h:%p
+    ControlMaster auto
+    Compression yes
+    CompressionLevel 9
+    KeepAlive no
+    IdentityFile ~/.ssh/work_id_rsa

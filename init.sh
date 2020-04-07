@@ -43,14 +43,7 @@ do
   fi
 done
 
-read -p "Install default ssh config file? (y/n)" answer
-case ${answer:0:1} in
-  y|Y)
-    # Symlink the ssh config file.
-    if [ ! -L $SSH_DIR/config ]; then
-      ln -s $DOTFILES_DIR/ssh/config_default $SSH_DIR/config
-    fi
-  ;;
-  * )
-    echo "The default ssh config was not installed."
-esac
+# Symlink the ssh config file.
+if [ ! -L $SSH_DIR/config ]; then
+  ln -s $DOTFILES_DIR/ssh/config $SSH_DIR/config
+fi

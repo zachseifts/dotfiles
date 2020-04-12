@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 set nocompatible " Disable complete vi compatibility
 set background=dark " Easier-to-read colors for dark backgrounds
 set history=1000 " Keep command line history
